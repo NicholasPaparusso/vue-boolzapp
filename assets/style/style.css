@@ -1,0 +1,35 @@
+/* Reset */
+  *,
+  *::after,
+  *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+/* Reset */
+/* General */
+body{
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #009688 0%,
+    #009688 15%,
+    #d8dbd5 15%,
+    #d8dbd5 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* General */
