@@ -4,6 +4,10 @@ createApp({
 
   data(){
     return{
+
+      lastmsg: "",
+      lastmsgdate: "",
+
       contacts: [
         {
         name: 'Michele',
@@ -165,12 +169,13 @@ createApp({
         }
         ],
         }
-        ]
+        ],
+        msg: "holaaaaaaaaaaaa"
     }
   },
 
   methods:{
-
+    
   },
 
   created(){
@@ -178,7 +183,7 @@ createApp({
   },
 
   mounted(){
-   
+   console.log('loaded');
   }
 
 }).mount('#app')

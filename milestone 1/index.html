@@ -9,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css' integrity='sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==' crossorigin='anonymous'/>
   
-  
+  <script src="https://unpkg.com/vue@3"></script>
   <link rel="stylesheet" href="./assets/style/style.css">
   <link rel="stylesheet" href="./assets/style/layout.css">
   <link rel="stylesheet" href="./assets/style/utility.css">
   <link rel="stylesheet" href="./assets/style/media.css">
-  <script src="https://unpkg.com/vue@3"></script>
+  
   <title>Boolzapp</title>
 </head>
 <body class="dfc">
@@ -27,7 +27,7 @@
         <div class="usercard ">
           
           <img class="round-img-icon" src="./assets/img/avatar_io.jpg" alt="sofia-avatar">
-          <span>{{name}}</span>
+          <span>Carla De Carlotti</span>
         </div>
 
           <div class="icons-container">
@@ -63,39 +63,22 @@
       </div>
 
 
-      <div class="contactlist">
+      <div  class="contactlist">
 
-        <div class="card active d-flex p-10-20">
+        <div  v-for="(contact,index) in contacts" class="card active d-flex p-10-20">
 
           <div class="info dfc">
 
-            <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
+            <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="">
 
-            <div class="info-text">
-              <p>{{name}}</p>
-              <small>{{last-msg}}</small>
+            <div  class="info-text">
+              <p>{{contact.name}}</p>
+              <small></small>
             </div>
 
           </div>
 
-          <date>{{date}}</date>
-
-        </div>
-
-        <div class="card  d-flex p-10-20">
-
-          <div class="info dfc">
-
-            <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
-
-            <div class="info-text">
-              <p>{{name}}</p>
-              <small>{{last-msg}}</small>
-            </div>
-
-          </div>
-
-          <date>{{date}}</date>
+          <small> date</small>
 
         </div>
 
@@ -112,8 +95,8 @@
           
           <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
           <div class="info-text">
-            <p>{{name}}</p>
-            <small>{{lastLog}}</small>
+            <p></p>
+            <small>ultimo accesso</small>
           </div>
         </div>
         
