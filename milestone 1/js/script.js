@@ -7,7 +7,7 @@ createApp({
 
       lastmsg: "",
       lastmsgdate: "",
-
+      selectedItem: 0,
       contacts: [
         {
         name: 'Michele',

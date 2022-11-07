@@ -65,11 +65,11 @@
 
       <div  class="contactlist">
 
-        <div  v-for="(contact,index) in contacts" class="card active d-flex p-10-20">
+        <div  v-for="(contact,index) in contacts" :class="{' active': selectedItem === index}" @click="selectedItem = index" class="card d-flex p-10-20">
 
           <div class="info dfc">
 
-            <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="">
+            <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" :alt="contact.name+'-avatar'">
 
             <div  class="info-text">
               <p>{{contact.name}}</p>
@@ -91,11 +91,11 @@
     <div class="chat">
 
       <div class="topbar d-flex p-10-20">
-        <div class="active-card dfc">
+        <div  v-for="(contact,index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
           
-          <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
+          <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
           <div class="info-text">
-            <p></p>
+            <p>{{contact.name}}</p>
             <small>ultimo accesso</small>
           </div>
         </div>

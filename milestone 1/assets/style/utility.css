@@ -15,9 +15,7 @@
  
 }
 
-.active-card{
 
-}
 
 .icons-container i{
   color: #b1b1b1;
@@ -27,7 +25,7 @@
 }
 
 .d-hide{
-  display: hide;
+  display:none;
 }
 
 .round-img-icon{
