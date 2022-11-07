@@ -14,19 +14,87 @@
   <link rel="stylesheet" href="./assets/style/utility.css">
   <title>Boolzapp</title>
 </head>
-<body>
+<body class="dfc">
 
-  <main class="d-flex">
+  <main id="app" class="d-flex">
 <!-- Left side -->
     <div class="contact">
 
-      <div class="topbar"></div>
+      <div class="topbar p-10-20">
+        <div class="usercard ">
+          <img class="round-img-icon" src="./assets/img/avatar_io.jpg" alt="sofia-avatar">
+          <span></span>
 
-      <div class="notification-setup"></div>
+          <div class="icons-container">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
+      </div>
 
-      <div class="search"></div>
+      <div class="notification-setup p-10-20 d-flex">
 
-      <div class="contactlist"></div>
+          <div class="bell d-flex">
+            <i  class="fa-solid fa-bell-slash"></i>
+            <!-- <i  class="fa-solid fa-bell d-hide"></i> -->
+          </div>
+
+          <div class="setup-text">
+            <p>Ricevi notifiche di nuovi messaggi</p>
+            <a href="#">{{msg}}</a>
+          </div>
+       
+      </div>
+
+      <div class="search d-flex">
+        
+         <div class="search-icon dfc">
+          <i class="fa-solid fa-magnifying-glass"></i>
+         </div>
+
+        <input type="text" placeholder="Cerca o inizia una nuova chat">
+
+      </div>
+
+
+      <div class="contactlist">
+
+        <div class="card active d-flex p-10-20">
+
+          <div class="info dfc">
+
+            <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
+
+            <div class="info-text">
+              <p>{{name}}</p>
+              <small>{{last-msg}}</small>
+            </div>
+
+          </div>
+
+          <date>{{date}}</date>
+
+        </div>
+
+        <div class="card  d-flex p-10-20">
+
+          <div class="info dfc">
+
+            <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
+
+            <div class="info-text">
+              <p>{{name}}</p>
+              <small>{{last-msg}}</small>
+            </div>
+
+          </div>
+
+          <date>{{date}}</date>
+
+        </div>
+
+      </div>
 
     </div>
 <!-- Left side -->
@@ -34,11 +102,40 @@
 <!-- Right side -->
     <div class="chat">
 
-      <div class="topbar"></div>
+      <div class="topbar d-flex p-10-20">
+        <div class="active-card dfc">
+          
+          <img class="round-img-icon" src="./assets/img/avatar_1.jpg" alt="">
+          <div class="info-text">
+            <p>{{name}}</p>
+            <small>{{lastLog}}</small>
+          </div>
+        </div>
+        
+
+        <div class="icons-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-paperclip"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+
+      </div>
 
       <div class="mainchat"></div>
 
-      <div class="input-area"></div>
+      <div class="input-area d-flex">
+
+        <div class="icons-container">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+
+        <input type="text" placeholder="Scrivi un messaggio">
+
+        <div class="icons-container">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+
+      </div>
 
     </div>
 <!-- Right side -->
