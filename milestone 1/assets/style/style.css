@@ -110,6 +110,7 @@ input{
   padding: 15px;
   border-radius: 10px;
   margin-bottom: 10px;
+  color: #676767;
 }
 
 .received{
@@ -120,6 +121,12 @@ input{
 .sent{
   background-color: #d5f9ba;
 }
+
+.mainchat small{
+  float: right;
+  font-size: .6em
+}
+
 
 /* Mainchat */
 
