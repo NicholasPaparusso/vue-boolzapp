@@ -97,6 +97,29 @@ input{
 /* Chat topbar */
 
 /* Mainchat */
+.mainchat{
+  padding: 30px 50px;
+  flex-direction: column;
+}
+
+.sent, .received{
+  border-radius: 10px;
+  padding: 10px;
+  width: 40%;
+  min-width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.received{
+  align-self: flex-end;
+  background-color: #ffffff;
+}
+
+.sent{
+  background-color: #d5f9ba;
+}
 
 /* Mainchat */
 
