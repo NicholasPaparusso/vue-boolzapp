@@ -39,6 +39,11 @@ input{
 
 /* General */
 
+.contact .topbar{
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Notification-setup */
 .bell{
   width: 50px;
@@ -48,8 +53,9 @@ input{
   color: #8edafc;
   justify-content: center;
   align-items: center;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .setup-text p{
