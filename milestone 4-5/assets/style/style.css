@@ -127,6 +127,44 @@ input{
   font-size: .5em
 }
 
+.msg{
+  position: relative;
+  top: 0;
+  left:0;
+}
+
+.dropdown{
+  position: absolute;
+  background-color: #ffffff;
+  top: 85%;
+  right: 10px;
+  z-index: 99;
+  text-align: center;
+  box-shadow: 0 5px 5px 1px rgba(0, 0, 0, .2);
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.dropdown p{
+  padding: 10px 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown p:hover{
+  background-color: rgb(230, 230, 230);
+}
+
+.msg i{
+  font-size: .6em;
+  float: right;
+  display: none;
+  cursor: pointer;
+}
+
+.msg:hover  i{
+  display: block;
+}
 
 /* Mainchat */
 

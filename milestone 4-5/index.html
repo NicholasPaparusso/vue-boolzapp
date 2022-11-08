@@ -112,7 +112,12 @@
       <div v-for="(contact,index) in contacts" :class="{'d-flex' : index === selectedItem} " class="mainchat">
 
           
-          <div  v-for="msg in contact.messages"  :class="msg.status">
+          <div class="msg"  v-for="msg in contact.messages"  :class="msg.status">
+            <i  class="fa-solid fa-chevron-down"></i>
+            <div class="dropdown">
+              <p>Message info</p>
+              <p>Delete Message</p>
+            </div>
             <p>{{msg.message}}</p>
             <small>{{msg.date}}</small>
           </div>
