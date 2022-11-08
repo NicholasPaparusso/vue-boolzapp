@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css' integrity='sha512-HHsOC+h3najWR7OKiGZtfhFIEzg5VRIPde0kB0bG2QRidTQqf+sbfcxCTB16AcFB93xMjnBIKE29/MjdzXE+qw==' crossorigin='anonymous'/>
+  
+  <script src="https://unpkg.com/vue@3"></script>
+  <link rel="stylesheet" href="./assets/style/style.css">
+  <link rel="stylesheet" href="./assets/style/layout.css">
+  <link rel="stylesheet" href="./assets/style/utility.css">
+  <link rel="stylesheet" href="./assets/style/media.css">
+  
+  <title>Boolzapp</title>
+</head>
+<body class="dfc">
+
+  <main id="app" class="d-flex">
+<!-- Left side -->
+    <div class="contact">
+
+      <div class="topbar d-flex p-10-20">
+        <div class="usercard ">
+          
+          <img class="round-img-icon" src="./assets/img/avatar_io.jpg" alt="sofia-avatar">
+          <span>Carla De Carlotti</span>
+        </div>
+
+          <div class="icons-container">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        
+      </div>
+
+      <div class="notification-setup p-10-20 d-flex">
+
+          <div class="bell d-flex">
+            <i v-if="isNotificationOn" class="fa-solid fa-bell-slash"></i>
+            <i v-else class="fa-solid fa-bell"></i> 
+          </div>
+
+          <div class="setup-text">
+            <p>Ricevi notifiche di nuovi messaggi</p>
+            <a @click="isNotificationOn = !isNotificationOn" href="#"> <span v-if="isNotificationOn">{{notificationOn}}</span> <span v-else>{{notificationOff}}</span> notifiche Desktop</a>
+          </div>
+       
+      </div>
+
+      <div class="search d-flex">
+        
+         <div class="search-icon dfc">
+          <i class="fa-solid fa-magnifying-glass"></i>
+         </div>
+
+        <input v-model="contactName" type="text" placeholder="Cerca o inizia una nuova chat">
+
+      </div>
+
+
+      <div  class="contactlist">
+
+        <div  v-for="(contact,index) in contacts" :class="{' active': selectedItem === index}" @click="selectedItem = index" class="card d-flex p-10-20">
+
+          <div class="info dfc">
+
+            <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" :alt="contact.name+'-avatar'">
+
+            <div  class="info-text">
+              <p>{{contact.name}}</p>
+              <small>{{contact.messages[0].message}}</small>
+            </div>
+
+          </div>
+
+          <small> date</small>
+
+        </div>
+
+      </div>
+
+    </div>
+<!-- Left side -->
+
+<!-- Right side -->
+    <div class="chat">
+
+      <div class="topbar d-flex p-10-20">
+        <div  v-for="(contact, index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
+          
+          <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
+          <div class="info-text">
+            <p>{{contact.name}}</p>
+            <small>ultimo accesso</small>
+          </div>
+        </div>
+        
+
+        <div class="icons-container">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-paperclip"></i>
+          <i class="fa-solid fa-ellipsis-vertical"></i>
+        </div>
+
+      </div>
+
+      <div v-for="(contact,index) in contacts" :class="{'d-flex' : index === selectedItem} " class="mainchat">
+
+          
+          <div  v-for="msg in contact.messages"  :class="msg.status">
+            <p>{{msg.message}}</p>
+            <small>{{msg.date}}</small>
+          </div>
+
+      </div>
+
+      <div class="input-area d-flex">
+
+        <div class="icons-container">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+
+        <input v-model="newMsg" @keydown.enter="newMessage(selectedItem) + replay(selectedItem)" type="text" placeholder="Scrivi un messaggio">
+
+        <div class="icons-container">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+
+      </div>
+
+    </div>
+<!-- Right side -->
+  </main>
+
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

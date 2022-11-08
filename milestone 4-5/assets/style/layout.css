@@ -1,0 +1,67 @@
+body{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #009688 0%,
+    #009688 15vh,
+    #d8dbd5 15vh,
+    #d8dbd5 100vh
+  );
+}
+
+main{
+  width: 80%;
+  height: 90vh;
+  background-color: #eaeaea;
+}
+
+.chat{
+  height: 100%;
+  width: 65%;
+}
+
+.topbar, .input-area{
+  height: 70px;
+}
+
+
+.contact .topbar{
+  border-right: 1px solid #dcdcdc;
+}
+
+.mainchat{
+  height: calc(100% - 140px);
+  background-image: url(../img/mine.jpg);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.contact{
+  height: 100%;
+  width: 35%;
+}
+
+.notification-setup{
+  height: 75px;
+  background-color: #8edafc;
+  align-items: center;
+  
+}
+
+.search{
+  height: 60px;
+  padding: 10px 8px;
+  background-color: #fafafa;
+}
+
+.contactlist{
+  overflow-y: scroll;
+  height: calc(100% - 205px);
+}
+
+.input-area{
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+}
