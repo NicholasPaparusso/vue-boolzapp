@@ -58,7 +58,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
          </div>
 
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <input v-model="contactName" type="text" placeholder="Cerca o inizia una nuova chat">
 
       </div>
 
@@ -125,7 +125,7 @@
           <i class="fa-regular fa-face-smile"></i>
         </div>
 
-        <input type="text" placeholder="Scrivi un messaggio">
+        <input v-model="newMsg" @keydown.enter="newMessage(selectedItem) + replay(selectedItem)" type="text" placeholder="Scrivi un messaggio">
 
         <div class="icons-container">
           <i class="fa-solid fa-microphone"></i>

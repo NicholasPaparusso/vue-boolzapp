@@ -8,6 +8,9 @@ createApp({
       notificationOff: "Attiva",
       isNotificationOn: true,
       selectedItem: 0,
+      newMsg: "",
+      isMsgSent: false,
+      contactName: "",
       contacts: [
         {
         name: 'Michele',
@@ -240,6 +243,36 @@ createApp({
   },
 
   methods:{
+
+    newMessage(index){
+      const d = new Date;
+      if(this.newMsg.length > 0){
+        this.isMsgSent = true,
+        this.contacts[index].messages.push({
+          date: d,
+          message: this.newMsg,
+          status: 'sent'
+        })
+      }
+      
+      this.newMsg = "";
+    },
+
+    replay(index){
+      const d = new Date;
+      if(this.isMsgSent === true){
+
+        this.clock = setTimeout(()=>{
+
+          this.contacts[index].messages.push({
+            date: d,
+            message: "Sono un Bot",
+            status: 'received'
+          })
+        },2000)
+      }
+    },
+
 
   },
 
