@@ -4,9 +4,9 @@ createApp({
 
   data(){
     return{
-      notificationOn: "Disattiva",
-      notificationOff: "Attiva",
-      isNotificationOn: true,
+
+      lastmsg: "",
+      lastmsgdate: "",
       selectedItem: 0,
       contacts: [
         {
@@ -240,7 +240,7 @@ createApp({
   },
 
   methods:{
-
+    
   },
 
   created(){
@@ -249,7 +249,6 @@ createApp({
 
   mounted(){
    console.log('loaded');
-
   }
 
 }).mount('#app')

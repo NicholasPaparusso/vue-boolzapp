@@ -41,13 +41,13 @@
       <div class="notification-setup p-10-20 d-flex">
 
           <div class="bell d-flex">
-            <i v-if="isNotificationOn" class="fa-solid fa-bell-slash"></i>
-            <i v-else class="fa-solid fa-bell"></i> 
+            <i  class="fa-solid fa-bell-slash"></i>
+            <!-- <i  class="fa-solid fa-bell d-hide"></i> -->
           </div>
 
           <div class="setup-text">
             <p>Ricevi notifiche di nuovi messaggi</p>
-            <a @click="isNotificationOn = !isNotificationOn" href="#"> <span v-if="isNotificationOn">{{notificationOn}}</span> <span v-else>{{notificationOff}}</span> notifiche Desktop</a>
+            <a href="#">Attiva notifiche Desktop</a>
           </div>
        
       </div>
@@ -73,7 +73,7 @@
 
             <div  class="info-text">
               <p>{{contact.name}}</p>
-              <small>{{contact.messages[0].message}}</small>
+              <small></small>
             </div>
 
           </div>
@@ -91,7 +91,7 @@
     <div class="chat">
 
       <div class="topbar d-flex p-10-20">
-        <div  v-for="(contact, index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
+        <div  v-for="(contact,index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
           
           <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
           <div class="info-text">
@@ -109,12 +109,16 @@
 
       </div>
 
-      <div v-for="(contact,index) in contacts" :class="{'d-flex' : index === selectedItem} " class="mainchat">
+      <div class="mainchat d-flex">
 
           
-          <div  v-for="msg in contact.messages"  :class="msg.status">
-            <p>{{msg.message}}</p>
-            <small>{{msg.date}}</small>
+          <div class="received">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus consequatur placeat culpa. Ut aspernatur sequi nisi nesciunt voluptas corrupti a.</p>
+            <small>data</small>
+          </div>
+          <div class="sent">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, voluptate.</p>
+            <small>data</small>
           </div>
 
       </div>

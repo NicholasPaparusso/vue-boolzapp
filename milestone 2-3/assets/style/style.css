@@ -100,31 +100,31 @@ input{
 .mainchat{
   padding: 30px 50px;
   flex-direction: column;
-  display: none;
 }
 
 .sent, .received{
   border-radius: 10px;
+  padding: 10px;
   width: 40%;
   min-width: 300px;
   padding: 15px;
+  border-radius: 10px;
   margin-bottom: 10px;
   color: #676767;
 }
 
 .received{
+  align-self: flex-end;
   background-color: #ffffff;
 }
 
 .sent{
-  align-self: flex-end;
   background-color: #d5f9ba;
 }
 
 .mainchat small{
   float: right;
-  padding-top: 5px;
-  font-size: .5em
+  font-size: .6em
 }
 
 

@@ -1,0 +1,50 @@
+.d-flex{
+  display: flex;
+}
+
+.card{
+  background-color: #f2fbff;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.usercard{
+  display: flex;
+  height: 100%;
+  align-items: center;
+ 
+}
+
+
+
+.icons-container i{
+  color: #b1b1b1;
+  margin: .6em;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.d-hide{
+  display:none;
+}
+
+.round-img-icon{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.p-10-20{
+  padding: 10px 20px;
+}
+
+.dfc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.active{
+  background-color: #e9ebeb;
+}
+
