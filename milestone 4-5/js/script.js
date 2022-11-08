@@ -242,6 +242,14 @@ createApp({
     }
   },
 
+  computed:{
+    filteredName() {
+      return this.contacts.filter(contact => {
+        return contact.name.toLowerCase().includes(this.contactName.toLowerCase())
+      })
+    }
+  },
+
   methods:{
 
     newMessage(index){
@@ -272,7 +280,6 @@ createApp({
         },2000)
       }
     },
-
 
   },
 

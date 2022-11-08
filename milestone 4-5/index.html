@@ -65,7 +65,7 @@
 
       <div  class="contactlist">
 
-        <div  v-for="(contact,index) in contacts" :class="{' active': selectedItem === index}" @click="selectedItem = index" class="card d-flex p-10-20">
+        <div  v-for="(contact,index) in filteredName" :class="{' active': selectedItem === index}" @click="selectedItem = index" class="card d-flex p-10-20">
 
           <div class="info dfc">
 
