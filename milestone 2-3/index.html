@@ -41,13 +41,13 @@
       <div class="notification-setup p-10-20 d-flex">
 
           <div class="bell d-flex">
-            <i  class="fa-solid fa-bell-slash"></i>
-            <!-- <i  class="fa-solid fa-bell d-hide"></i> -->
+            <i v-if="isNotificationOn" class="fa-solid fa-bell-slash"></i>
+            <i v-else class="fa-solid fa-bell"></i> 
           </div>
 
           <div class="setup-text">
             <p>Ricevi notifiche di nuovi messaggi</p>
-            <a href="#">Attiva notifiche Desktop</a>
+            <a @click="isNotificationOn = !isNotificationOn" href="#"> <span v-if="isNotificationOn">{{notificationOn}}</span> <span v-else>{{notificationOff}}</span> notifiche Desktop</a>
           </div>
        
       </div>
@@ -58,7 +58,7 @@
           <i class="fa-solid fa-magnifying-glass"></i>
          </div>
 
-        <input type="text" placeholder="Cerca o inizia una nuova chat">
+        <input v-model="contactName" type="text" placeholder="Cerca o inizia una nuova chat">
 
       </div>
 
@@ -73,7 +73,7 @@
 
             <div  class="info-text">
               <p>{{contact.name}}</p>
-              <small></small>
+              <small>{{contact.messages[0].message}}</small>
             </div>
 
           </div>
@@ -91,7 +91,7 @@
     <div class="chat">
 
       <div class="topbar d-flex p-10-20">
-        <div  v-for="(contact,index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
+        <div  v-for="(contact, index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
           
           <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
           <div class="info-text">
@@ -109,16 +109,12 @@
 
       </div>
 
-      <div class="mainchat d-flex">
+      <div v-for="(contact,index) in contacts" :class="{'d-flex' : index === selectedItem} " class="mainchat">
 
           
-          <div class="received">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus consequatur placeat culpa. Ut aspernatur sequi nisi nesciunt voluptas corrupti a.</p>
-            <small>data</small>
-          </div>
-          <div class="sent">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio, voluptate.</p>
-            <small>data</small>
+          <div  v-for="msg in contact.messages"  :class="msg.status">
+            <p>{{msg.message}}</p>
+            <small>{{msg.date}}</small>
           </div>
 
       </div>
@@ -129,7 +125,7 @@
           <i class="fa-regular fa-face-smile"></i>
         </div>
 
-        <input type="text" placeholder="Scrivi un messaggio">
+        <input v-model="newMsg" @keydown.enter="newMessage(selectedItem) + replay(selectedItem)" type="text" placeholder="Scrivi un messaggio">
 
         <div class="icons-container">
           <i class="fa-solid fa-microphone"></i>

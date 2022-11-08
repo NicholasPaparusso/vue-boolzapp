@@ -4,9 +4,9 @@ body{
   background: linear-gradient(
     to bottom,
     #009688 0%,
-    #009688 15%,
-    #d8dbd5 15%,
-    #d8dbd5 100%
+    #009688 15vh,
+    #d8dbd5 15vh,
+    #d8dbd5 100vh
   );
 }
 
