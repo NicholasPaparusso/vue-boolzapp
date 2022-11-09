@@ -1,4 +1,9 @@
+
+const DateTime = luxon.DateTime;
+const now = DateTime.now();
+now.setLocale('it')
 const { createApp} = Vue ;
+
 
 createApp({
 
@@ -14,6 +19,9 @@ createApp({
       isMsgSent: false,
       contactName: "",
       isClicked: false,
+      received: " ",
+      sent: "",
+      isReceived: null,
       contacts: [
         {
         name: 'Michele',
@@ -256,11 +264,10 @@ createApp({
   methods:{
 
     newMessage(index){
-      const d = new Date;
       if(this.newMsg.length > 0){
         this.isMsgSent = true,
         this.contacts[index].messages.push({
-          date: d,
+          date: now.hour +':'+ now.minute,
           message: this.newMsg,
           status: 'sent'
         })
@@ -270,13 +277,12 @@ createApp({
     },
 
     replay(index){
-      const d = new Date;
       if(this.isMsgSent === true){
 
         this.clock = setTimeout(()=>{
 
           this.contacts[index].messages.push({
-            date: d,
+            date: now.hour +':'+ now.minute,
             message: "Sono un Bot",
             status: 'received'
           })
@@ -287,16 +293,11 @@ createApp({
     deleteMsg(index,indexMsg){
 
       this.isClicked = false
-       if(this.contacts[index].messages.length > 1){
+       
          this.contacts[index].messages.splice(indexMsg,1)
          console.log('if');
-       }else{
-         this.contacts[index].messages.pop()
-         console.log('else');
-       }
-      console.log(this.contacts[index].messages[indexMsg]);
-      console.log(this.contacts[index].messages.length)
-    }
+
+    },
 
   },
 
@@ -306,7 +307,6 @@ createApp({
 
   mounted(){
    console.log('loaded');
-  
   }
 
 }).mount('#app')

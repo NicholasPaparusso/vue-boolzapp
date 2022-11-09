@@ -73,12 +73,14 @@
 
             <div  class="info-text">
               <p>{{contact.name}}</p>
-              <small>{{contact.messages[contact.messages.length - 1].message}}</small>
+              <small v-if="contact.messages.length > 0" >Ultimo messaggio:
+                {{contact.messages[contact.messages.length - 1].message}}
+              </small>
             </div>
 
           </div>
 
-          <small>{{contact.messages[contact.messages.length - 1].date}}</small>
+          <small v-if="contact.messages.length > 0" >{{contact.messages[contact.messages.length - 1].date}}</small>
 
         </div>
 
@@ -96,7 +98,7 @@
           <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
           <div class="info-text">
             <p>{{contact.name}}</p>
-            <small>{{contact.messages[contact.messages.length - 1].date}}</small>
+            <small v-if="contact.messages.length > 0" >Ultimo accesso: {{contact.messages[contact.messages.length - 1].date}}</small>
           </div>
         </div>
         
