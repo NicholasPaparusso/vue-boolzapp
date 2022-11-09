@@ -73,12 +73,12 @@
 
             <div  class="info-text">
               <p>{{contact.name}}</p>
-              <small>{{contact.messages[0].message}}</small>
+              <small>{{contact.messages[contact.messages.length - 1].message}}</small>
             </div>
 
           </div>
 
-          <small> date</small>
+          <small>{{contact.messages[contact.messages.length - 1].date}}</small>
 
         </div>
 
@@ -96,7 +96,7 @@
           <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
           <div class="info-text">
             <p>{{contact.name}}</p>
-            <small>ultimo accesso</small>
+            <small>{{contact.messages[contact.messages.length - 1].date}}</small>
           </div>
         </div>
         
@@ -145,7 +145,7 @@
 <!-- Right side -->
   </main>
 
-
+  <script src="./js/luxon.js"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>
