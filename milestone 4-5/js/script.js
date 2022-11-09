@@ -289,10 +289,10 @@ createApp({
       this.isClicked = false
        if(this.contacts[index].messages.length > 1){
          this.contacts[index].messages.splice(indexMsg,1)
-         console.log('ciao');
+         console.log('if');
        }else{
-         this.contacts[index].messages.shift()
-         console.log('buongiorno');
+         this.contacts[index].messages.pop()
+         console.log('else');
        }
       console.log(this.contacts[index].messages[indexMsg]);
       console.log(this.contacts[index].messages.length)
