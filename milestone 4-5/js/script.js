@@ -1,7 +1,7 @@
 
 const DateTime = luxon.DateTime;
 const now = DateTime.now();
-now.setLocale('it')
+
 const { createApp} = Vue ;
 
 
@@ -267,7 +267,7 @@ createApp({
       if(this.newMsg.length > 0){
         this.isMsgSent = true,
         this.contacts[index].messages.push({
-          date: now.hour +':'+ now.minute,
+          date: now.setLocale('it').toLocaleString(DateTime.TIME_SIMPLE),
           message: this.newMsg,
           status: 'sent'
         })
@@ -282,7 +282,7 @@ createApp({
         this.clock = setTimeout(()=>{
 
           this.contacts[index].messages.push({
-            date: now.hour +':'+ now.minute,
+            date: now.setLocale('it').toLocaleString(DateTime.TIME_SIMPLE),
             message: "Sono un Bot",
             status: 'received'
           })
@@ -291,14 +291,20 @@ createApp({
     },
 
     deleteMsg(index,indexMsg){
-
       this.isClicked = false
-       
-         this.contacts[index].messages.splice(indexMsg,1)
-         console.log('if');
-
+      this.contacts[index].messages.splice(indexMsg,1)
     },
 
+    // setDate(){
+    //   this.contacts.forEach((contact, index) => {
+
+    //     for(let i = 0; i < contact.messages.length ; i++){
+    //       contact.messages[i].date = contact.messages[i]
+    //       console.log(contact.messages[i].date);
+    //     }
+        
+    //   });
+    // }
   },
 
   created(){
@@ -307,6 +313,7 @@ createApp({
 
   mounted(){
    console.log('loaded');
+  //  this.setDate();
   }
 
 }).mount('#app')

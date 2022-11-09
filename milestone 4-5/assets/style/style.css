@@ -88,6 +88,14 @@ input{
 .info-text{
   margin-left: 10px;
 }
+
+.card small{
+  color: #676767;
+}
+
+.card div + small{
+  text-align: right;
+  }
 /* Contanctlist */
 
 /* Chat topbar */
