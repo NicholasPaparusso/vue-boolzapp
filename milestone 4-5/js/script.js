@@ -8,9 +8,12 @@ createApp({
       notificationOff: "Attiva",
       isNotificationOn: true,
       selectedItem: 0,
+      selectedMsg: null,
+      indexDd: 0,
       newMsg: "",
       isMsgSent: false,
       contactName: "",
+      isClicked: false,
       contacts: [
         {
         name: 'Michele',
@@ -281,6 +284,20 @@ createApp({
       }
     },
 
+    deleteMsg(index,indexMsg){
+
+      this.isClicked = false
+       if(this.contacts[index].messages.length > 1){
+         this.contacts[index].messages.splice(indexMsg,1)
+         console.log('ciao');
+       }else{
+         this.contacts[index].messages.shift()
+         console.log('buongiorno');
+       }
+      console.log(this.contacts[index].messages[indexMsg]);
+      console.log(this.contacts[index].messages.length)
+    }
+
   },
 
   created(){
@@ -289,7 +306,7 @@ createApp({
 
   mounted(){
    console.log('loaded');
-
+  
   }
 
 }).mount('#app')

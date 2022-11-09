@@ -147,13 +147,13 @@ input{
 
 .dropdown p{
   padding: 10px 15px;
-  width: 100%;
   cursor: pointer;
 }
 
 .dropdown p:hover{
   background-color: rgb(230, 230, 230);
 }
+
 
 .msg i{
   font-size: .6em;
