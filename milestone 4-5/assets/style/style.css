@@ -44,6 +44,10 @@ input{
   align-items: center;
 }
 
+input{
+  border-radius: 5px;
+}
+
 /* Notification-setup */
 .bell{
   width: 50px;
@@ -77,6 +81,7 @@ input{
   width: 50px;
   color: #b1b1b1;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .search input{
@@ -183,3 +188,14 @@ input{
   padding: 10px;
 }
 /* Input-area */
+
+/* Effects */
+i:hover{
+  transform: scale(1.2);
+  transition: all .2s linear;
+}
+
+input:focus{
+  outline: 2px solid #00968737;
+}
+/* Effects */
