@@ -19,9 +19,6 @@ createApp({
       isMsgSent: false,
       contactName: "",
       isClicked: false,
-      received: " ",
-      sent: "",
-      isReceived: null,
       contacts: [
         {
         name: 'Michele',
@@ -283,7 +280,7 @@ createApp({
 
           this.contacts[index].messages.push({
             date: now.setLocale('it').toLocaleString(DateTime.TIME_SIMPLE),
-            message: "Sono un Bot",
+            message: "Sono un bot",
             status: 'received'
           })
         },2000)
@@ -294,17 +291,6 @@ createApp({
       this.isClicked = false
       this.contacts[index].messages.splice(indexMsg,1)
     },
-
-    // setDate(){
-    //   this.contacts.forEach((contact, index) => {
-
-    //     for(let i = 0; i < contact.messages.length ; i++){
-    //       contact.messages[i].date = contact.messages[i]
-    //       console.log(contact.messages[i].date);
-    //     }
-        
-    //   });
-    // }
   },
 
   created(){
@@ -313,7 +299,7 @@ createApp({
 
   mounted(){
    console.log('loaded');
-  //  this.setDate();
+  
   }
 
 }).mount('#app')
