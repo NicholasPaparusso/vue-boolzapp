@@ -64,7 +64,7 @@
 
       <div  class="contactlist">
 
-        <div  v-for="(contact,index) in filteredName" :class="{' active': selectedItem === index}" @click="selectedItem = index , selectedMsg = null" class="card d-flex p-10-20">
+        <div  v-for="(contact,index) in filteredName" :class="{' active': selectedItem === index}" @click=" myfunction(index), selectedMsg = null" class="card d-flex p-10-20">
 
           <div class="info dfc">
 
@@ -92,12 +92,12 @@
     <div class="chat">
 
       <div class="topbar d-flex p-10-20">
-        <div  v-for="(contact, index) in contacts" :class="{'dfc': selectedItem === index}"  class="d-hide">
+        <div   class="dfc"  class="d-hide">
           
-          <img class="round-img-icon" :src="'./assets/img/avatar'+contact.avatar+'.jpg'" alt="contact.name+'-avatar'">
+          <img class="round-img-icon" :src="'./assets/img/avatar'+contacts[selectedItem].avatar+'.jpg'" alt="contacts[selectedItem].name+'-avatar'">
           <div class="info-text">
-            <p>{{contact.name}}</p>
-            <small v-if="contact.messages.length > 0" >Ultimo accesso: {{contact.messages[contact.messages.length - 1].date}}</small>
+            <p>{{contacts[selectedItem].name}}</p>
+            <small v-if="contacts[selectedItem].messages.length > 0" >Ultimo accesso: {{contacts[selectedItem].messages[contacts[selectedItem].messages.length - 1].date}}</small>
           </div>
         </div>
         
@@ -110,10 +110,10 @@
 
       </div>
 
-      <div v-for="(contact,index) in contacts" :class="{'d-flex' : index === selectedItem} " class="mainchat">
+      <div  class="mainchat d-flex">
 
           
-          <div class="msg"   v-for="(msg, indexMsg) in contact.messages"  :class="msg.status">
+          <div class="msg"   v-for="(msg, indexMsg) in contacts[selectedItem].messages"  :class="msg.status">
 
             <i @click="selectedMsg = indexMsg , isClicked = !isClicked" class="fa-solid fa-chevron-down icon"></i>
 

@@ -291,7 +291,15 @@ createApp({
       this.isClicked = false
       this.contacts[index].messages.splice(indexMsg,1)
     },
+
+    myfunction(index){
+      this.selectedItem = index 
+      console.log(index);
+    },
+
   },
+
+
 
   created(){
 
@@ -299,7 +307,6 @@ createApp({
 
   mounted(){
    console.log('loaded');
-  
   }
 
 }).mount('#app')
