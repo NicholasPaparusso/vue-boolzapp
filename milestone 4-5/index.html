@@ -119,7 +119,7 @@
 
             <div v-if="isClicked" class="dropdown d-hide" :class="{'active-dd': indexMsg === selectedMsg}">
               <p>Message info</p>
-              <p @click="deleteMsg(index,indexMsg)" >Delete Message</p>
+              <p @click="deleteMsg(selectedItem,indexMsg)" >Delete Message</p>
             </div>
 
             <p>{{msg.message}}</p>
